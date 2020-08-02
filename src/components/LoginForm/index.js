@@ -2,11 +2,7 @@ import React, { useState } from "react";
 import { LoginButton, LoginForm, LoginIcon, LoginInput } from "./styled";
 import logo from "../../assets/logo.png";
 
-export default function Login() {
-  async function handleSubmit(e) {
-    e.preventDefault();
-  }
-
+export default function Login({ handleSubmit, handleChange }) {
   return (
     <LoginForm onSubmit={handleSubmit}>
       <LoginIcon to="/">
@@ -15,6 +11,7 @@ export default function Login() {
       <LoginInput
         variant="filled"
         label="Digite seu usuário no Github"
+        onChange={handleChange}
       ></LoginInput>
       <LoginButton type="submit">Enviar</LoginButton>
     </LoginForm>
